@@ -2,7 +2,8 @@
 FROM redis/redis-stack:latest
 
 # Instala Nginx (o TinyProxy)
-RUN apt-get update && apt-get install -y nginx
+RUN apt-get update && apt-get install -y nginx && nginx -v
+
 
 # Expone el puerto 6379 para Redis y 8888 para HTTP
 EXPOSE 6379 8888
