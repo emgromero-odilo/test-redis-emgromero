@@ -9,6 +9,5 @@ services:
       name: redis-data
       mountPath: /data
       sizeGB: 1
-    envVars:
-      - key: REDIS_PORT
-        value: "6379"
+    buildCommand: docker build -t redis-proxy .
+    startCommand: docker run -p 6379:6379 redis-proxy
