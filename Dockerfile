@@ -1,8 +1,8 @@
 # Usa la imagen oficial de Redis Stack
 FROM redis/redis-stack:latest
 
-# Expone el puerto de Redis
-EXPOSE 6379
+# Expone los puertos de Redis y su interfaz web
+EXPOSE 6379 8001
 
-# Comando por defecto al iniciar el contenedor
-CMD ["redis-server"]
+# Ejecuta Redis con su servidor HTTP habilitado
+CMD ["redis-server", "--loadmodule", "/opt/redis-stack/lib/redisearch.so"]
