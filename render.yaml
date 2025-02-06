@@ -1,0 +1,14 @@
+services:
+  - name: redis-stack
+    type: web
+    env: docker
+    repo: https://github.com/emgromero-odilo/test-redis-emgromero.git
+    branch: main
+    plan: free
+    disk:
+      name: redis-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: REDIS_PORT
+        value: "6379"
