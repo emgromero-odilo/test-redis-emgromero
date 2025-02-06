@@ -11,4 +11,4 @@ COPY tinyproxy.conf /etc/tinyproxy/tinyproxy.conf
 EXPOSE 6379 8888
 
 # Inicia TinyProxy y Redis en paralelo
-CMD tinyproxy & redis-server
+CMD tinyproxy & redis-server --bind 0.0.0.0 --protected-mode no
